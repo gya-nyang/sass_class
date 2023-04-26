@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+body {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+}
+
+.skill_status {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 480px;
+  padding: 20px 80px;
+  background: #f5f5f5;
+  border-radius: 10px;
+}
+.skill_status dt {
+  width: 86px;
+  padding-right: 20px;
+  text-align: right;
+}
+.skill_status dd {
+  width: calc(100% - 120px);
+  list-style: none;
+  height: 10px;
+  background: #fff;
+  margin: 20px 0;
+  border-radius: 5px;
+}
+.skill_status dd:nth-of-type(1) div {
+  position: relative;
+  width: 50%;
+  height: 10px;
+  background: #ff6e51;
+  border-radius: 5px;
+}
+.skill_status dd:nth-of-type(1) div::after {
+  content: "50%";
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  transform: translateX(50%);
+  top: -30px;
+  border: 1px solid #ff6e51;
+  padding: 4px 8px;
+  background: #fff;
+}
+.skill_status dd:nth-of-type(2) div {
+  position: relative;
+  width: 75%;
+  height: 10px;
+  background: #ffc251;
+  border-radius: 5px;
+}
+.skill_status dd:nth-of-type(2) div::after {
+  content: "75%";
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  transform: translateX(50%);
+  top: -30px;
+  border: 1px solid #ffc251;
+  padding: 4px 8px;
+  background: #fff;
+}
+.skill_status dd:nth-of-type(3) div {
+  position: relative;
+  width: 65%;
+  height: 10px;
+  background: #77ff51;
+  border-radius: 5px;
+}
+.skill_status dd:nth-of-type(3) div::after {
+  content: "65%";
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  transform: translateX(50%);
+  top: -30px;
+  border: 1px solid #77ff51;
+  padding: 4px 8px;
+  background: #fff;
+}
+.skill_status dd:nth-of-type(4) div {
+  position: relative;
+  width: 30%;
+  height: 10px;
+  background: #51eeff;
+  border-radius: 5px;
+}
+.skill_status dd:nth-of-type(4) div::after {
+  content: "30%";
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  transform: translateX(50%);
+  top: -30px;
+  border: 1px solid #51eeff;
+  padding: 4px 8px;
+  background: #fff;
+}/*# sourceMappingURL=status.css.map */

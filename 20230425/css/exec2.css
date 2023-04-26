@@ -1,0 +1,66 @@
+body {
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 240px;
+  line-height: 44px;
+  border-radius: 6px;
+  font-size: 14px;
+  border: none;
+  color: #fff;
+  position: relative;
+}
+button.login {
+  justify-content: center;
+  background: #ff3725;
+}
+button.naver {
+  text-indent: 10px;
+  background: #47b748;
+}
+button.naver .bg {
+  width: 38px;
+  height: 38px;
+  background-color: #fff;
+  background-image: url("../images/sns_icon.png");
+  background-size: 623px;
+  background-repeat: no-repeat;
+  background-position: -370px -83px;
+}
+button.naver::after {
+  content: "";
+  position: absolute;
+  left: 46px;
+  width: 1px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.5);
+}
+button.kakao {
+  text-indent: 10px;
+  background: #ffe800;
+  color: #2f1520;
+}
+button.kakao .bg {
+  width: 38px;
+  height: 38px;
+  background-color: #fff;
+  background-image: url("../images/sns_icon.png");
+  background-size: 623px;
+  background-repeat: no-repeat;
+  background-color: #ffe800;
+  background-position: -172px -166px;
+}
+button.kakao::after {
+  content: "";
+  position: absolute;
+  left: 46px;
+  width: 1px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.5);
+  background: rgba(47, 21, 32, 0.5);
+}/*# sourceMappingURL=exec2.css.map */

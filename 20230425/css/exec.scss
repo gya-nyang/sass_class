@@ -1,0 +1,61 @@
+@charset "utf-8";
+
+$line: 1px solid #e1e1e1;
+
+ul {
+    display:flex;
+    width:400px;
+    margin:100px auto;
+
+    position:relative;
+
+    li {
+        width:25%;
+        text-align: center;
+        background:#f9f9f9;
+        border: {
+            top:$line;
+            right:$line;
+        }
+
+        &:first-child {
+            border-left:$line;
+        }
+        a {
+            line-height:24px;
+            text-decoration: none;
+            color:#333;
+        }
+
+        div {
+            position:absolute;
+            left:0;
+
+            display:none;
+            width:100%;
+            height:200px;
+        }
+
+        $bgColor:#ffcfcf, #cff4ff, #f2cfff, #ffcfd1;
+
+        @for $i from 1 through length($bgColor) {
+            &:nth-child(#{$i}) {
+                div {
+                    background:nth($bgColor, $i)
+                }
+            }
+        }
+
+        &.on {
+            background:#333;
+            a {
+                color:#fff;
+            }
+            div {
+                display:block;
+            }
+        }
+    }
+
+    
+}

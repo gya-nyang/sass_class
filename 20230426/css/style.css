@@ -1,0 +1,35 @@
+.wrap {
+  width: 1180px;
+  margin: 0 auto;
+  border: 3px solid #333;
+}
+.wrap .box01 {
+  width: 98.3333333333px;
+  background: #ff8f7e;
+  height: 100px;
+}
+.wrap .box02 {
+  width: 590px;
+  background: #aeffa3;
+  height: 100px;
+}
+.wrap .box03 {
+  width: 1180px;
+  background: #83ace5;
+  height: 100px;
+}
+
+.button {
+  border: none;
+  padding: 5px 20px;
+  border-radius: 5px;
+  background: #ff5243;
+  color: #fff;
+}
+.button.btn02 {
+  background: #ffb0a9;
+}
+
+.btn03 {
+  opacity: 0.2;
+}/*# sourceMappingURL=style.css.map */

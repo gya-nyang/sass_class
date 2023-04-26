@@ -1,0 +1,186 @@
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+$bg_color:#ffff8e;
+$txt_color01:#ff4137;
+$txt_color02:#2592ff;
+
+@mixin h3_txt {
+    font-family:"noto sans kr", '맑은 고딕', arial, sans-serif;
+    font-size:30px;
+}
+@mixin txt_over {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow:hidden;
+}
+
+.title01 {
+    @include h3_txt;
+    background:$bg_color;
+    color:$txt_color01;
+}
+
+.title02 {
+    @include h3_txt;
+    background:$bg_color;
+    color:$txt_color02;
+}
+
+.p01 {
+    width:50%;
+    @include txt_over;
+}
+
+// 글자, 모양, 배경으로 나누어 관리
+
+// 버튼 글자
+@mixin btnFont {
+    font-family: '궁서체';
+    font-weight:bold;
+    font-size:20px;
+}
+
+// 버튼 모양
+@mixin btnArea {
+    border:1px solid #ccc;
+    padding:5px 20px;
+    border-radius:8px;
+}
+
+@mixin btn {
+    @include btnFont;
+    @include btnArea;
+}
+
+.btn01 {
+    @include btn;
+    background: $bg_color;
+}
+
+.btn02 {
+    @include btn;
+}
+
+$time: 0.5s;
+
+// 버튼에 마우스 오버시 적용할 믹스인함수
+@mixin btn_over {
+    background:#000;
+    color:#fff;
+    transition:$time;
+}
+
+.btn01:hover,
+.btn02:hover{
+    @include btn_over;
+}
+
+
+
+@mixin bar {
+    display:block;
+    position:absolute;
+    top:calc(50% - 1px);
+    left:calc(50% - 20px);
+    width:40px;
+    height:2px;
+    background:#292929;
+    transition: 0.2s;
+}
+
+label.btn {
+    display:block;
+    position:relative;
+    width:60px;
+    height:60px;
+    border:1px solid #e1e1e1;
+
+    span {
+        @include bar;
+    }
+
+    span:nth-child(1){
+        transform: translateY(-10px);
+    }
+    span:nth-child(3){
+        transform: translateY(10px);
+    }
+}
+
+#check:checked + label.btn {
+    span:nth-child(1){
+        transform: translateY(0px) rotate(45deg);
+    }
+    span:nth-child(2){
+        width:0;
+    }
+    span:nth-child(3){
+        transform: translateY(0px) rotate(-45deg);
+    }
+}
+
+
+
+// 4. mixin함수에 매개변수 삽입하기
+
+@mixin divBox($bgcolor) {
+    @include btnFont;
+    background-color:$bgcolor;
+}
+
+#box01 {
+    @include divBox(#dedeff);
+}
+
+#box02 {
+    @include divBox(#deffe9);
+}
+
+// 테이블 테두리 서식
+@mixin border($w:1px, $s:solid, $c:#f00){
+    width:300px;
+    border:$w $s $c;
+}
+
+.border {
+    @include border(5px, double);
+}
+
+// 테이블 배경과 크기 서식
+@mixin table($t_bg:#f1f1f1) {
+    background:$t_bg;
+    width:500px;
+}
+@mixin caption($bg:#ffff00) {
+    background:$bg;
+    padding:10px 0;
+    font-weight:bold;
+}
+
+@mixin odd_tr($bg:#fddc7a){
+    background:$bg;
+}
+
+table {
+    border-collapse:collapse;
+    @include table;
+
+    caption {
+        @include caption;
+    }
+    
+    tbody {
+        tr:nth-child(2n-1){
+            @include odd_tr;
+        }
+
+        td {
+            line-height:210%;
+            text-align:right;
+            padding-right:20px;
+        }
+    }
+}
+
